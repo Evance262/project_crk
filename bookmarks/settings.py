@@ -32,17 +32,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    # Third party apps
-    # 'phone_field',
     'django_countries',
     'users.apps.UsersConfig',
+    'django.contrib.admin',
 ]
 
 MIDDLEWARE = [
@@ -148,8 +145,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.User'
 
 
-# Success loing redirection
-LOGIN_REDIRECT_URL = "home" 
+# Success login redirection
+# LOGIN_REDIRECT_URL = 'logout'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
 
 ABSOLUTE_URL_OVERRIDES = {
     'auth.user': lambda u: reverse_lazy('user_detail',

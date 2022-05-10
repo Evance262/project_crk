@@ -7,8 +7,10 @@ Performamces:
     2: Authenticate user
 """
 from django.http import HttpResponse
-from django.shortcuts import render
-from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from .forms import LoginForm
 
 
@@ -28,15 +30,22 @@ def user_login(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return HttpResponse('Authenticated '\
-                                        'successfully')
+                    return redirect('dashboard')
                 else:
-                    return HttpResponse('Disabled account')
+                    messages.info(request, 'Disabled account')
             else:
-                return HttpResponse('Invalid login')
+                messages.info(request, 'Username or password is incorrect')
     else:
         form = LoginForm()
     return render(request, 'users/login.html', {'form': form})
+
+
+def logoutUser(request):
+    """
+    Redirects to a success page
+    """
+    logout(request)
+    return redirect('login')
 
 
 class PasswordChangeView:
@@ -55,3 +64,10 @@ class PasswordResetView:
     be used to reset the password, and sending
     that link to the users registered email address."""
     pass
+
+
+@login_required
+def dashboard(request):
+    return render(request,
+                  'users/dashboard.html',
+                  {'section': 'dashboard'})
