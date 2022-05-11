@@ -11,7 +11,6 @@ from . import views
 urlpatterns = [
     # POST views
     path('login/', views.user_login, name='login'),
-    # path('users/', include('django.contrib.auth.urls')),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('dashboard', views.dashboard, name='dashboard'),
@@ -37,4 +36,7 @@ urlpatterns = [
     path('reset/done/',
          auth_views.PasswordResetCompleteView.as_view(),
          name='password_reset_complete'),
+
+     # User registration
+     path('register/', views.register, name='register'),
 ]

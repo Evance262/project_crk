@@ -11,7 +11,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import LoginForm
+from .forms import LoginForm, UserRegistrationForm
 
 
 # Instantiating a new login form from GET method
@@ -46,6 +46,31 @@ def logoutUser(request):
     """
     logout(request)
     return render('login')
+
+
+def register(request):
+    """Creating a new user account.
+       set_password: A password hashing method for security"""
+    if request.method == 'POST':
+        user_form = UserRegistrationForm(request.POST)
+        if user_form.is_valid():
+            # create a new user object but avoid saving it yet
+            new_user = user_form.save(commit=False)
+            # Set the chosen password
+            new_user.set_password(
+                user_form.cleaned_data['password'])
+            # Save the user object
+            new_user.save()
+
+            return render(request,
+                          'users/register_done.html',
+                          {'new_user': new_user})
+    else:
+        user_form = UserRegistrationForm()
+        
+    return render(request,
+                  'users/register.html',
+                  {'user_form': user_form})
 
 
 class PasswordChangeView:
