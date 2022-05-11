@@ -45,7 +45,7 @@ def logoutUser(request):
     Redirects to a success page
     """
     logout(request)
-    return redirect('login')
+    return render('login')
 
 
 class PasswordChangeView:
