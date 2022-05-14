@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 # Some bash script to set up the environment
 
+
+# Use the management command runserver_plus provided by Django Extensions
+# to run the development server, as follows:
+python manage.py runserver_plus --cert-file cert.crt

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-evb_bfy+w*sh30+yecvaiq@$l1y^85eyeif&wfroew@@o89w#=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['crk.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_countries',
-    'users.apps.UsersConfig',
+    'phone_field',
+    'account.apps.AccountConfig',
     'django.contrib.admin',
+    'social_django',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -121,6 +124,9 @@ ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_VERIFICATIOIN = 'none'
 
+# To enable Django to serve media files uploaded by users
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -142,7 +148,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Custom user
 # The engin should be running using the custom user model
-AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = 'account.User'
+
+
+# Custom Backend authentcation
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
+]
+
+# Social authentication
+SOCIAL_AUTH_FACEBOOK_KEY = '747533266241783' # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '1063e63f597b3e65d328801b5cfa4112' # Facebook App Secret
+
 
 
 # Success login redirection

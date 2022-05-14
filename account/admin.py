@@ -1,5 +1,5 @@
 from django.contrib import admin
-from users.models import Passport, Identity
+from account.models import Passport, Identity
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseAdmin
 # from .forms import UserCreationForm
@@ -40,5 +40,6 @@ class UserAdmin(BaseAdmin):
             'fields': ('is_superuser', 'is_staff')
         })
     )
-    
+
+
 admin.site.register(User, UserAdmin)
