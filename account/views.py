@@ -71,7 +71,7 @@ def register(request):
                           {'new_user': new_user})
     else:
         user_form = UserRegistrationForm()
-        
+
     return render(request,
                   'account/register.html',
                   {'user_form': user_form})
@@ -113,7 +113,7 @@ def edit(request):
         user_form = UserEditForm(instance=request.user,
                                  data=request.POST)
         profile_form = ProfileEditForm(
-                                    instance=request.user.profile,
+                                    instance=request.user,
                                     data=request.POST,
                                     files=request.FILES)
         if user_form.is_valid() and profile_form.is_valid():
@@ -126,7 +126,7 @@ def edit(request):
     else:
         user_form = UserEditForm(instance=request.user)
         profile_form = ProfileEditForm(
-                                       instance=request.user.profile)
+                                       instance=request.user)
 
     return render(request,
                   'account/edit.html',
