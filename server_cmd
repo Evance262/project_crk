@@ -1,0 +1,5 @@
+#/usr/bin/env bash
+
+# Use the management command runserver_plus provided by Django Extensions
+# to run the development server on port 8000, as follows:
+python3 manage.py runserver_plus --cert-file cert.crt --key-file key.key --keep-meta-shutdown localhost:8000

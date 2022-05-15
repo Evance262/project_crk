@@ -1,4 +1,0 @@
-#/usr/bin/env bash
-
-# Use this command to run the server using a secured protocal (https://)
-python3 manage.py runserver_plus --cert-file cert.crt --key-file key.key --keep-meta-shutdown localhost:8000
