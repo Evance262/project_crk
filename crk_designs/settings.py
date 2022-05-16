@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'social_django',
     'django_extensions',
     'gigs.apps.GigsConfig',
+    'pages.apps.PagesConfig',
 ]
 
 MIDDLEWARE = [

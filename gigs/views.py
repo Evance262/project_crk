@@ -1,17 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.views.generic import TemplateView
 from .forms import GigCreateForm
 from .models import Gig
 from django.shortcuts import get_object_or_404
-
-
-class LandingPage(TemplateView):
-    template_name = 'landing_page.html'
-
-class HomePage(TemplateView):
-    template_name = 'home.html'
 
 
 @login_required
