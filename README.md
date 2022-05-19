@@ -14,7 +14,7 @@
     people that they follow
 
 **Environment setup**
-*run the following commands to set up the project:*
+*-- run the following commands to set up the project:*
 
     python3 get-pip.py
 
