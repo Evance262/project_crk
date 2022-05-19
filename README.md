@@ -14,8 +14,7 @@
     people that they follow
 
 **Environment setup**
-
-    run the following commands to set up the project:
+*run the following commands to set up the project:*
 
     python3 get-pip.py
 
@@ -33,5 +32,5 @@
 
 **Note:**
 
-    Once te server is running on you can go in your browser and
+    Once the server is running on you can go in your browser and
     request http://127.0.0.1:8000 to get to the web app's landing page.
