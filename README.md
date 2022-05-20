@@ -26,7 +26,7 @@
 
     virtualenv_name\scripts\activate     # (On Windows machine)
 
-    pip install requirements.txt
+    pip install -r requirements.txt
 
     python3 manage.py runserver
 
