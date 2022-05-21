@@ -11,9 +11,17 @@ class Gig(models.Model):
                              related_name='gigs_created',
                              on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
+    price = models.PositiveIntegerField(default=5000,
+                                        help_text='Enter price in Malawian Kwacha')
+    delivery = models.IntegerField(help_text="number of days")
+    added_files = models.BooleanField(verbose_name="PSD/SVC Files",
+                                      help_text="Will you include source files")
+    quality = models.BooleanField(verbose_name="High Quality")
+    colors_included = models.BooleanField(verbose_name="Different colors",
+                                          help_text="will you include different colors")
+    mockups_included = models.BooleanField()
     slug = models.SlugField(max_length=200,
                             blank=True)
-    url = models.URLField()
     image = models.ImageField(upload_to='images/%Y/%m/%d/')
     description = models.TextField(blank=True)
     created = models.DateField(auto_now_add=True,

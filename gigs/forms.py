@@ -9,7 +9,7 @@ from django.utils.text import slugify
 class GigCreateForm(forms.ModelForm):
     class Meta:
         model = Gig
-        fields = ('title', 'url', 'description')
+        fields = ('title', 'price', 'description')
         widgets = {
             'url': forms.HiddenInput,
         }

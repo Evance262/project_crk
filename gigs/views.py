@@ -4,6 +4,22 @@ from django.contrib import messages
 from .forms import GigCreateForm
 from .models import Gig
 from django.shortcuts import get_object_or_404
+from django.views.generic import (
+    ListView,
+    DetailView,
+    RedirectView,
+    UpdateView
+)
+
+class GigListView(ListView):
+    model = Gig
+    template_name = "home.html"
+
+
+class GigDetailView(DetailView):
+    model = Gig
+    template_name = "detail.html"
+
 
 
 @login_required
@@ -34,9 +50,9 @@ def create_gig(request):
                    'form': form})
 
 
-def gig_detail(request, id, slug):
-    gig = get_object_or_404(Gig, id=id, slug=slug)
-    return render(request,
-                  'gigs/gig/detail.html',
-                  {'section': 'gigs',
-                  'gig': gig})
+# def gig_detail(request, id, slug):
+#     gig = get_object_or_404(Gig, id=id, slug=slug)
+#     return render(request,
+#                   'gigs/gig/detail.html',
+#                   {'section': 'gigs',
+#                   'gig': gig})

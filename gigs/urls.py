@@ -1,10 +1,14 @@
 from django.urls import path
-from . import views
+from gigs.views import (
+    GigListView,
+    GigDetailView,
+    )
 
 app_name = 'images'
 
 urlpatterns = [
-    path('create/', views.create_gig, name='name'),
+    path('gigs/', GigListView.as_view()),
+    # path('create/', views.create_gig, name='name'),
     path('detail/<int:id>/<slug:slug>/',
-         views.gig_detail, name='detail'),
+         GigDetailView.as_view(), name='detail'),
 ]

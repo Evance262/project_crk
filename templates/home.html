@@ -46,17 +46,20 @@
 <section class="section">
     <div class="container">
         <h3 class="section-title mb-4">Graphic Design</h3>
-
+        
+        
         <div class="row text-center">
+            {% for gig in object_list  %}
             <div class="col-lg-4">
-                <a href="javascript:void(0)" class="card border-0 text-dark">
-                    <img class="card-img-top" src="{% static 'images/img-5.jpg' %}" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, ollie Landing page">
+                <a href="{% url 'detail' %}" class="card border-0 text-dark">
+                    <img class="card-img-top" src="{{ gig.image }}" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, ollie Landing page">
                     <span class="card-body">
-                        <h4 class="title mt-4">Website Design</h4>
+                        <h4 class="title mt-4">{{ gig.titile }}</h4>
                         <p class="xs-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     </span>
                 </a>
             </div>
+            {% endfor %}
             <div class="col-lg-4">
                 <a href="javascript:void(0)" class="card border-0 text-dark">
                     <img class="card-img-top" src="{% static 'images/img-6.jpg' %}" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, ollie Landing page">
