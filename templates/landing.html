@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <!-- showcase -->
+    <section class="bg-light text-dark p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+      <div class="container">
+        <div class="d-sm-flex align-item-center justify-content-between">
+          <div>
+            <h1>Welcome to Crk Designs</h1>
+            <p class="my-4">Making it easy for Graphic Designers and Clients to <br> 
+            freelance remotely.</p>
+            <button class="btn btn-dark btn-sm-start">Get started</button>
+          </div>
+          <img class="img-fluid w-50 d-none d-sm-block" src="{% static 'images/interaction_design.svg' %}" alt="">
+        </div>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="p-3">
+      <div class="container">
+        <h4 class="title">Popular</h4>
+        <div class="row text-center">
+          <div class="row row-cols-1 row-cols-md-4 g-2">
+            <div class="col">
+              <div class="card">
+                <img src="{% static 'images/black-mug.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a href="detail.html" class="nav-item nav-link">Card title</a>
+                    </h5>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="{% static 'images/t-shirt2.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">T-shirt Design</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="{% static 'images/black-mug.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a href="detail.html" class="nav-item nav-link">Card title</a>
+                    </h5>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="{% static 'images/Packaging-Design.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Package Design</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Wanna freelance -->
+    <section class="bg-dark text-light p-5 my-5">
+    <div class="container">
+      <div class="d-sm-flex justify-content-between align-items-center">
+        <div class="text-center text-sm-start">
+          <h3 class="md-3 mb-md-0">Build oustanding Brands!</h3>
+        <h5 class="my-2">Hire talented Designers</h5>
+        </div>
+        <div class="d-md-flex align-item-center">
+          <img src="{% static 'images/pictures.png' %}" width="70%" class="rounded float-end d-none d-sm-block" alt="...">
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <!-- freelance section -->
+    <section class="p-1">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-md">
+            <img src="{% static 'images/freelance.png' %}" class="img-fluid d-none d-sm-block" alt="">
+          </div>
+          <div class="col-md">
+            <h2>Wanna freelance?</h2>
+            <h4><img src="{% static 'images/gig-icon.png' %}" alt=""> Create a Gig</h4>
+            <p>Showcase it on your profile, and attract more customers.</p>
+            <h4><img src="{% static 'images/search-icon.png' %}" alt=""> Find a Designer</h4>
+            <p class="">Search for any Designer according to you're degital design ideas.</p>
+            <h4><img src="{% static 'images/dimond-icon.png' %}" alt=""> Pay and get Paid</h4>
+            <p>On completion of the contract with our payment system.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonies -->
+    <section class="bg-light text-dark p-5 my-5">
+      <div class="container">
+        <div class="d-sm-flex justify-content-between align-items-center">
+          <div class="text-center text-sm-start">
+            <h3 class="md-3 mb-md-0">"It's easy to get hired!</h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat et sunt deleniti quibusdam
+            beatae dolores natus qui dolore excepturi aperiam"</p>
+          </div>
+          <div class="d-md-flex align-item-center">
+            <img src="{% static 'images/pictures.png' %}" width="70%" class="rounded float-end d-none d-sm-block" alt="...">
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock content %}

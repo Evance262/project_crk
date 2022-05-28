@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'gigs.apps.GigsConfig',
     'pages.apps.PagesConfig',
+    'easy_thumbnails',
 ]
 
 MIDDLEWARE = [

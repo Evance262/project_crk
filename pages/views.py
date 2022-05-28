@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 
 
 class LandingPage(TemplateView):
-    template_name = 'landing_page.html'
+    template_name = 'landing.html'
 
 class HomePage(TemplateView):
     template_name = 'home.html'

@@ -1,14 +1,10 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 
 {% block title %}Login{% endblock %}
 
 {% block content %}
+<div class="container p-5">
     <h1>Login</h1>
-  
-    <!-- <section class="section">
-        <div class="container">
-            </div>
-            </section> -->
 
     {% if next %}
         {% if user.is_authenticated %}
@@ -53,4 +49,6 @@
             </li>
         </ul>
     </div>
+</div>
+    
 {% endblock %}

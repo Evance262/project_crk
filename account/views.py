@@ -53,7 +53,7 @@ def user_login(request):
                 messages.error(request, 'Username or password is incorrect')
     else:
         form = LoginForm()
-    return render(request, 'registration/signin.html', {'form': form})
+    return render(request, 'account/login.html', {'form': form})
 
 
 def logoutUser(request):
@@ -87,7 +87,7 @@ def register(request):
         user_form = UserRegistrationForm()
 
     return render(request,
-                  'registration/signup.html',
+                  'account/register.html',
                   {'user_form': user_form})
 
 

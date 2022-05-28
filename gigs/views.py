@@ -42,7 +42,7 @@ def create_gig(request):
             return redirect(new_item.get_absolute_url())
     else:
         # build form with data provided by thr bookmarklet vial GET
-        form = gigCreateForm(data=request.GET)
+        form = GigCreateForm(data=request.GET)
 
     return render(request,
                   'gigs/gig/create.html',

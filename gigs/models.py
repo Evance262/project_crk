@@ -29,6 +29,9 @@ class Gig(models.Model):
     users_like = models.ManyToManyField(settings.AUTH_USER_MODEL,
                                         related_name='gigs_liked',
                                         blank=True)
+    users_reviews = models.ManyToManyField(settings.AUTH_USER_MODEL,
+                                        related_name='reviews',
+                                        blank=True)
 
 
     def __str__(self):
