@@ -167,7 +167,7 @@ SOCIAL_AUTH_FACEBOOK_KEY = '747533266241783' # Facebook App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = '1063e63f597b3e65d328801b5cfa4112' # Facebook App Secret
 
 # Success login redirection
-# LOGIN_REDIRECT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'logout'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 

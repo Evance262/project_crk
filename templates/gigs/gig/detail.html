@@ -6,37 +6,44 @@
     <!-- Gig detail -->
     <section class="p-5">
       <div class="container">
-        <div class="row align-items-start justify-content-between">
+        <div class="row align-items-center justify-content-between">
           <div class="col-md">
-            <img src="{% static 'images/coffee-mug.jpg' %}" height="90%" width="90%" class="img- d-sm-block" alt="">
+            <img src="{% static 'images/coffee-mug.jpg' %}" height="100%" width="100%" class="img- d-sm-block" alt="">
           </div>
           <div class="col-md">
             <h2>Item Details</h2>
+            <h3>{{ gig.title }}</h3>
             <p>Starting at:</p>
-            <h4>Mk 7500+</h4>
-            <h4>Find a Designer</h4>
-            <p class="">Search for any Designer according to you're degital design ideas.</p>
-            <h4>Pay and get Paid</h4>
-            <p>On completion of the contract with our payment system.</p>
+            <h3>Mk {{ gig.price }}</h3>
+            <p>High quality: {{ gig.quality }}</p>
+            <p>Completion days: <strong>{{ gig.delivery }}</strong></p>
+            <p>Different colors: <strong>{{ gig.colors_included }}</strong></p>
+            <p>Files included: <strong>{{ gig.files_included }}</strong></p>
+          </div>
+          <div class="col">
+            <div>
+              <button class="btn btn-success">Order Express</button>
+            </div>
+            <br>
+            <br>
+            <div>
+              <button class="btn btn-outline-dark">Message Designer</button>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Gig Description -->
-    <section class="text-dark p-4">
+    <section class="text-dark p-5">
         <div class="container">
           <div class="d-sm-flex justify-content-between align-items-center">
             <div class="col-md text-center text-sm-start">
-              <h3 class="md-3 mb-md-0">Description</h3>
-            <p class="my-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat et sunt deleniti quibusdam
-              beatae dolores natus qui dolore excepturi aperiam Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos modi cum culpa
-            accusamus consequatur iure perspiciatis deserunt est vitae, qui vero natus in molestiae ut amet quo id, maxime eligendi!</p>
+              <h3 class="md mb-md-2">Description</h3>
+            <p class="my-4">{{ gig.description }}</p>
             </div>
-            <div class="col-md">
-              <form class="d-flex my-5 landing-search" role="search">
-              <input class="form-control me-2" type="search" placeholder="Website, logo, t-shirt..." aria-label="Search">
-              <button class="btn btn-outline-dark" type="submit">Search</button>
+            <div class="col">
+              
             </form>
             </div>
           </div>
