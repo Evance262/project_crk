@@ -1,10 +1,11 @@
 from django.urls import path
-from .views import ContactPage, LandingPage, HomePage
+from .views import ContactPage, LandingPage
+from django.urls import path
+from . import views
 
 app_name = 'pages'
 
 urlpatterns = [
     path('', LandingPage.as_view(), name='landing'),
-    path('home/', HomePage.as_view(), name='home'),
     path('contact/', ContactPage.as_view(), name='contact'),
 ]

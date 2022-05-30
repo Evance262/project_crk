@@ -108,47 +108,16 @@
               <div class="row">
                 {% for gig in gigs %}
                   <div class="col-lg-3">
-                  <img class="thumbnail" src="{% static 'images/tshirt.jpg' %}">
-                  <div class="box-element gig">
-                    <h6><strong>{{ gig.title }}</strong></h6>
-                    <hr>
-                    <button class="btn btn-outline-secondary add-btn">Like</button>
-                    <a class="btn btn-outline-success" href="#">View</a>
-                    <h4 style="display: inline-block;float: right">MK 6800</h4>
+                    <img class="thumbnail" src="{{ gig.image.url }}">
+                    <div class="box-element gig">
+                        <h6><strong>{{ gig.title }}</strong></h6>
+                        <hr>
+                        <button class="btn btn-outline-secondary add-btn">Like</button>
+                        <a class="btn btn-outline-success" href="{% url 'gigs:gig-detail' gig.slug %}">View</a>
+                        <h4 style="display: inline-block;float: right">MK {{ gig.price }}</h4>
+                    </div>
                   </div>
-              </div>
                 {% endfor %}
-                
-              <div class="col-lg-3">
-                <img class="thumbnail" src="{% static 'images/salada250.png' %}">
-                <div class="box-element gig">
-                  <h6><strong>Product and Packaging</strong></h6>
-                  <hr>
-                  <button class="btn btn-outline-secondary add-btn">Like</button>
-                  <a class="btn btn-outline-success" href="#">View</a>
-                  <h4 style="display: inline-block;float: right">MK 10,500</h4>
-                </div>
-            </div>
-            <div class="col-lg-3">
-              <img class="thumbnail" src="{% static 'images/t-shirt2.jpg' %}">
-              <div class="box-element gig">
-                <h6><strong>T-shirt Design</strong></h6>
-                <hr>
-                <button class="btn btn-outline-secondary add-btn">Like</button>
-                <a class="btn btn-outline-success" href="#">View</a>
-                <h4 style="display: inline-block;float: right">MK 6800</h4>
-              </div>
-          </div>
-          <div class="col-lg-3">
-            <img class="thumbnail" src="{% static 'images/mug250.jpg' %}">
-            <div class="box-element gig">
-              <h6><strong>Mug Design</strong></h6>
-              <hr>
-              <button class="btn btn-outline-secondary add-btn">Like</button>
-              <a class="btn btn-outline-success" href="#">View</a>
-              <h4 style="display: inline-block;float: right">MK 5000</h4>
-            </div>
-        </div>
               </div>
             </div>
           </section>

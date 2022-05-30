@@ -1,9 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import GigCreateForm
 from .models import Gig
-from django.shortcuts import get_object_or_404
 from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, \
                                   PageNotAnInteger
@@ -14,40 +13,12 @@ from django.views.generic import (
     UpdateView
 )
 
-# class GigListView(ListView):
-#     model = Gig
-#     template_name = "home.html"
 
 def gig_view(request):
+    "A view to display all the gigs"
     gigs = Gig.objects.all()
-    context = {'gigs':gigs}
-    return render(request, 'gig/home.html', context)
-
-# def gig_view(request):
-#     """Gig view for all context"""
-#     gigs = Gig.objects.all()
-#     paginator = Paginator(gigs, 8)
-#     page = request.GET.get('page')
-#     try:
-#         gigs = paginator.page(page)
-#     except pageNotAnInteger:
-#         # If page is not an integer deliver the first page
-#         gigs = paginator.page(1)
-#     except EmptyPage:
-#         if request.is_ajax():
-#             # if the request is AJAX and the page is out of range
-#             # return an empty page
-#             return HttpResponse('')
-#         # if page is out of range deliver last page of results
-#         gigs = paginator.page(paginator.num_pages)
-#     if request.is_ajax():
-#         return render(request,
-#                       'gigs/gig/list_ajax.html',
-#                       {'section': 'gigs', 'gigs': gigs})
-#     return render(request,
-#                   'gigs/gig/home.html',
-#                   {'section': 'gigs', 'gigs': gigs})
-
+    context = {'gigs': gigs}
+    return render(request, 'home.html', context)
 
 
 

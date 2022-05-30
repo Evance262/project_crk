@@ -3,11 +3,21 @@
 {% block title %}Images{% endblock title %}
 
 {% block content %}
-  <h1>Bookmark an image</h1>
-  <img src="{{ request.GET.url}}" class="image-preview">
-  <form method="post">
-      {{ form.as_p }}
-      {% csrf_token %}
-      <input type="submit" value="Bookmark it!">
-  </form>
+<div class="container p-5">
+
+  <div class="text-center">
+    <h1>Create a Gig</h1>
+  </div>
+  
+  <div class="row p-5">
+    <div class="col-md">
+      <form method="post">
+          {{ form.as_p }}
+          {% csrf_token %}
+          <button type="submit" class="btn btn-success">Create</button>
+      </form>
+    </div>
+  </div>
+
+</div>
 {% endblock content %}

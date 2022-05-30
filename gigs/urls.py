@@ -1,6 +1,5 @@
 from django.urls import path
 from gigs.views import (
-    # GigListView,
     GigDetailView,
     )
 from . import views
@@ -8,9 +7,8 @@ from . import views
 app_name = 'gigs'
 
 urlpatterns = [
-    path('gig_view/', views.gig_view, name='gig_view'),
-    # path('', view=views.GigListView.as_view(), name='gig_list'),
-    path('create/', views.create_gig, name='gig_create'),
-    path('detail/<int:id>/<slug:slug>/',
-         GigDetailView.as_view(), name='detail'),
+    path('home/', views.gig_view, name='home'),
+    path('create/', views.create_gig, name='gig-create'),
+    path('gig/detail/<slug:slug>/',
+         views.GigDetailView.as_view(), name='gig-detail'),
 ]
