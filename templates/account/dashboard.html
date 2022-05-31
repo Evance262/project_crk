@@ -15,7 +15,7 @@
                 <a class="btn btn-outline-dark" href="{% url 'edit' %}">Edit profile</a>
                 <a class="btn btn-outline-danger" href="{% url 'password_change' %}">Change password</a>
                 <h4 class="p-4"" style="display: inline-block;float: right"> Hello {{ user.username }}</h4>
-
+                <h4 class="p-4"" style="display: inline-block;float: right">{{ user.image }}</h4>
                 <br>
                 <br>
 
@@ -45,7 +45,7 @@
                     <div style="flex:1"><strong>Created</strong></div>
                 </div>
 
-                    {% for gig in gigs %}
+                    {% for gig in user.gigs %}
                       <div class="gig-row">
                     <div style="flex:2"><img src="{% static 'images/black-mug.jpg' %}" class="row-image"></div>
                     <div class="p-4" style="flex:2"><a class="nav-link text-success" href="#">Mug Design</a></div>
