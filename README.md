@@ -41,7 +41,16 @@ Evance Chapuma [GitHub](https://github.com/Evans262/) | [LinkedIn](https://www.l
 
     python3 manage.py runserver
 
-**Note:**
+**Usage**
 
     Once the server is running on you can go in your browser and
     request http://127.0.0.1:8000 to get to the web app's landing page.
+
+**Contributing**
+
+
+
+**Related Projects**
+
+    Checkout some of the related project on the internet:
+[Fiverr](https://www.fiverr.com/) | [TeeSpring](https://teespring.com/) | [Etsy](https://www.etsy.com/)
