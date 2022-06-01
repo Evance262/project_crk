@@ -49,7 +49,11 @@ Evance Chapuma [GitHub](https://github.com/Evans262/) | [LinkedIn](https://www.l
 
 **Demo**
 
-![](static/images/crk-demo.png)
+![](media/demo/crk-demo.png)
+![](media/demo/crk-demo3.png)
+![](media/demo/crk-demo5.png)
+![](media/demo/crk-demo6.png)
+![](media/demo/crk-demo0.png)
 
 **Environment setup and installation**
 *-- run the following commands to set up the project:*
