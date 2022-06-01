@@ -27,6 +27,9 @@ Evance Chapuma [GitHub](https://github.com/Evans262/) | [LinkedIn](https://www.l
     Web Developers or Photographers can create a profile for their business and 
     start creating gigs, deliver the work to the clients and get paid. 
 
+    The project’s goal is to help business owners in Malawi to hire graphic designers, developers or photographers who are verified to provide reliable and quality services. In addition to that it will enable designers to freelance and get hired from different employers. Furthermore, the print-on-demand service will enable designers to deliver merchandise to clients through suppliers identified by the site without inventory.
+
+
 **System model**
     
     This web app uses the social network model.
