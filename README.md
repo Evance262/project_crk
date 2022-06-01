@@ -13,10 +13,6 @@
   <img src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original-wordmark.svg" title="MySQL"  alt="MySQL" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original-wordmark.svg" title="Git" **alt="Git" width="40" height="40"/>
 </div>
-
-<div align="center">
-  <img src="static/images/crk-demo.png" width="600" height="300"/>
-</div>
 </div>
 
 
@@ -43,6 +39,10 @@ Evance Chapuma [GitHub](https://github.com/Evans262/) | [LinkedIn](https://www.l
     for users to share images from any website
     • An activity stream that allows users to see the content uploaded by the
     people that they follow
+
+**Demo**
+
+![](static/images/crk-demo.png)
 
 **Environment setup and installation**
 *-- run the following commands to set up the project:*
