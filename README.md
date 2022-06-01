@@ -1,8 +1,12 @@
 # [Crk Space](http://crk431.tech:8000)
 
+#### Created by:
+
+    Evance Chapuma [GitHub](https://github.com/Evans262/) | [LinkedIn](https://www.linkedin.com/in/evance-chapuma-a96960193/) - Full Stack Developer
+
 **Introduction**
 
-    Crk (Creek Space) is a platform for Freelancers, who run their businesses
+    Crk Space (Creek Space) is a platform for Freelancers, who run their businesses
     like Graphic Designing, Web Development, Photography, etc. Designers, 
     Web Developers or Photographers can create a profile for their business and 
     start creating gigs, deliver the work to the clients and get paid. 
