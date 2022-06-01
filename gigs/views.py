@@ -14,10 +14,10 @@ from django.views.generic import (
 from .models import Gig
 
 
-class CreatorMixin(object):
-    def get_queryset(self):
-        qs = super().get_queryset()
-        return qs.filter(creator=self.request.user)
+# class CreatorMixin(object):
+#     def get_queryset(self):
+#         qs = super().get_queryset()
+#         return qs.filter(creator=self.request.user)
 
 
 # class CreatorEditMixin(object):
@@ -26,14 +26,14 @@ class CreatorMixin(object):
 #         return super().form_valid(form)
 
 
-class CreatorGigMixin(CreatorMixin,
-                    LoginRequiredMixin,
-                    PermissionRequiredMixin):
-    model = Gig
-    fields = ['title', 'price', 'image', 'delivery', 'added_files', \
-              'quality', 'colors_included', 'mockups_included', \
-              'description',]
-    success_url = reverse('gig-list')
+# class CreatorGigMixin(CreatorMixin,
+#                     LoginRequiredMixin,
+#                     PermissionRequiredMixin):
+#     model = Gig
+#     fields = ['title', 'price', 'image', 'delivery', 'added_files', \
+#               'quality', 'colors_included', 'mockups_included', \
+#               'description',]
+#     success_url = reverse('gig-list')
 
 
 # class CreatorGigEditMixin(CreatorGigMixin, CreatorEditMixin):
@@ -56,7 +56,7 @@ class CreatorGigMixin(CreatorMixin,
 #     pass
 
 
-class ManageGigList(CreatorGigMixin, ListView):
+class ManageGigList(ListView):
     '''retrieve only gigs
         created by the current user.'''
     model = Gig

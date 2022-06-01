@@ -1,4 +1,11 @@
-**Crk Desisgn**
+# [Crk Space](http://crk431.tech:8000)
+
+**Introduction**
+
+    Crk (Creek Space) is a platform for Freelancers, who run their businesses
+    like Graphic Designing, Web Development, Photography, etc. Designers, 
+    Web Developers or Photographers can create a profile for their business and 
+    start creating gigs, deliver the work to the clients and get paid. 
 
 **System model**
     
@@ -13,7 +20,7 @@
     • An activity stream that allows users to see the content uploaded by the
     people that they follow
 
-**Environment setup**
+**Environment setup and installation**
 *-- run the following commands to set up the project:*
 
     python3 get-pip.py
