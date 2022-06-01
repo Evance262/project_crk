@@ -79,7 +79,9 @@ Evance Chapuma [GitHub](https://github.com/Evans262/) | [LinkedIn](https://www.l
 
 **Contributing**
 
+    Requirements for contribution:
 
+    Python Programming Language, Django Framework and any other Frontend superpowers you might have.
 
 **Related Projects**
 
