@@ -1,7 +1,5 @@
 # [Crk Space](http://crk431.tech:8000)
 
-[logo](/Pictures/crk log 2.1.png)
-
 #### Created by:
 
 Evance Chapuma [GitHub](https://github.com/Evans262/) | [LinkedIn](https://www.linkedin.com/in/evance-chapuma-a96960193/) - Full Stack Developer
@@ -43,10 +41,22 @@ Evance Chapuma [GitHub](https://github.com/Evans262/) | [LinkedIn](https://www.l
 
     python3 manage.py runserver
 
-**Usage**
+**Note:**
 
     Once the server is running on you can go in your browser and
     request http://127.0.0.1:8000 to get to the web app's landing page.
+
+
+**Usage**
+
+    Getting django runtime help:
+    ---
+    
+    $ django-admin help
+
+    $ django-admin <command> [options]
+    $ manage.py <command> [options]
+    $ python -m django <command> [options]
 
 **Contributing**
 
@@ -56,3 +66,5 @@ Evance Chapuma [GitHub](https://github.com/Evans262/) | [LinkedIn](https://www.l
 
     Checkout some of the related project on the internet:
 [Fiverr](https://www.fiverr.com/) | [TeeSpring](https://teespring.com/) | [Etsy](https://www.etsy.com/)
+
+**Licencing**
