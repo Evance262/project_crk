@@ -2,7 +2,7 @@
 
 #### Created by:
 
-    Evance Chapuma [GitHub](https://github.com/Evans262/) | [LinkedIn](https://www.linkedin.com/in/evance-chapuma-a96960193/) - Full Stack Developer
+Evance Chapuma [GitHub](https://github.com/Evans262/) | [LinkedIn](https://www.linkedin.com/in/evance-chapuma-a96960193/) - Full Stack Developer
 
 **Introduction**
 
