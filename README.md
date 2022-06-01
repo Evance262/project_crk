@@ -1,5 +1,7 @@
 # [Crk Space](http://crk431.tech:8000)
 
+[logo](/Pictures/crk log 2.1.png)
+
 #### Created by:
 
 Evance Chapuma [GitHub](https://github.com/Evans262/) | [LinkedIn](https://www.linkedin.com/in/evance-chapuma-a96960193/) - Full Stack Developer
