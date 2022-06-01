@@ -1,4 +1,7 @@
+<div align="center">
 # [Crk Space](http://crk431.tech:8000)
+</div>
+
 
 #### Created by:
 
@@ -50,8 +53,7 @@ Evance Chapuma [GitHub](https://github.com/Evans262/) | [LinkedIn](https://www.l
 **Usage**
 
     Getting django runtime help:
-    ---
-    
+    ----------------------------
     $ django-admin help
 
     $ django-admin <command> [options]
@@ -67,4 +69,7 @@ Evance Chapuma [GitHub](https://github.com/Evans262/) | [LinkedIn](https://www.l
     Checkout some of the related project on the internet:
 [Fiverr](https://www.fiverr.com/) | [TeeSpring](https://teespring.com/) | [Etsy](https://www.etsy.com/)
 
-**Licencing**
+**Licensing**
+
+This project's [Bootstrap](https://github.com/twbs/bootstrap/blob/v5.2.0-beta1/LICENSE) is licenced under
+the MIT License.
