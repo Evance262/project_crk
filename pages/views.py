@@ -5,8 +5,8 @@ from gigs.models import Gig
 
 
 class LandingPage(TemplateView):
-    template_name = 'landing.html'
+    template_name = 'pages/landing.html'
 
 
 class ContactPage(TemplateView):
-    template_name = 'contact.html'
+    template_name = 'pages/contact.html'

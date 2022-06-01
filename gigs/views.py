@@ -1,64 +1,111 @@
+from django.urls import reverse
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin,\
+                                       PermissionRequiredMixin
 from django.contrib import messages
-from .forms import GigCreateForm
-from .models import Gig
-from django.http import HttpResponse
-from django.core.paginator import Paginator, EmptyPage, \
-                                  PageNotAnInteger
 from django.views.generic import (
     ListView,
     DetailView,
+    CreateView,
     RedirectView,
     UpdateView
+
 )
+from .models import Gig
+
+
+class CreatorMixin(object):
+    def get_queryset(self):
+        qs = super().get_queryset()
+        return qs.filter(creator=self.request.user)
+
+
+# class CreatorEditMixin(object):
+#     def form_valid(self, form):
+#         form.instance.creator = self.request.user
+#         return super().form_valid(form)
+
+
+class CreatorGigMixin(CreatorMixin,
+                    LoginRequiredMixin,
+                    PermissionRequiredMixin):
+    model = Gig
+    fields = ['title', 'price', 'image', 'delivery', 'added_files', \
+              'quality', 'colors_included', 'mockups_included', \
+              'description',]
+    success_url = reverse('gig-list')
+
+
+# class CreatorGigEditMixin(CreatorGigMixin, CreatorEditMixin):
+#     pass
+
+
+# class ManageGigListView(CreatorGigMixin, ListView):
+#     template_name = 'gigs/dashboard.html'
+
+
+# class CourseCreateView(CreatorGigEditMixin, CreateView):
+#     pass
+
+
+# class CourseUpdateView(CreatorGigEditMixin, UpdateView):
+#     pass
+
+
+# class CourseDeleteView(CreatorGigMixin, DeleteView):
+#     pass
+
+
+class ManageGigList(CreatorGigMixin, ListView):
+    '''retrieve only gigs
+        created by the current user.'''
+    model = Gig
+    template_name = "gigs/dashboard.html"
+    permission_required = 'gigs.view_gig'
+    # context_object_name = "all_gigs_by_user"
+
+    def get_queryset(self):
+        '''prevent users from editing, updating, or deleting
+           courses they didn't create'''
+        qs = super().get_queryset()
+        return qs.filter(creator=self.request.user)
+
 
 
 def gig_view(request):
     "A view to display all the gigs"
     gigs = Gig.objects.all()
     context = {'gigs': gigs}
-    return render(request, 'home.html', context)
+    return render(request, 'pages/home.html', context)
 
 
 
 class GigDetailView(DetailView):
+    '''Detail page for each Gig'''
     model = Gig
-    template_name = "gigs/gig/detail.html"
+    template_name = "gigs/detail.html"
 
 
-
-@login_required
-def create_gig(request):
-    if request.method == 'POST':
-        # form is sent
-        form = GigCreateForm(data=request.POST)
-        if form.is_valid():
-            # form data is valid
-            cd = form.cleaned_data
-            # prevents the data from being saved to the database yet
-            new_item = form.save(commit=False) 
-
-            # assign current user to the item
-            new_item.user = request.user
-            new_item.save() # now saves the gig object to the database
-            messages.success(request, 'Gig added successfully')
-
-            # redirect to new created item detail view
-            return redirect(new_item.get_absolute_url())
-    else:
-        # build form with data provided by thr bookmarklet vial GET
-        form = GigCreateForm(data=request.GET)
-
-    return render(request,
-                  'gigs/gig/create.html',
-                  {'section': 'gigs',
-                   'form': form})
+class GigCreateView(LoginRequiredMixin, CreateView):
+    '''Requires a user to login
+       to add new gig to the database'''
+    model = Gig
+    fields = ['title', 'price', 'image', 'delivery', 'added_files', \
+              'quality', 'colors_included', 'mockups_included', \
+              'description',]
+    template_name = "gigs/create.html"
 
 
-# def gig_detail(request, id, slug):
-#     gig = get_object_or_404(Gig, id=id, slug=slug)
-#     return render(request,
-#                   'gigs/gig/detail.html',
-#                   {'section': 'gigs',
-#                   'gig': gig})
+    def form_valid(self, form):
+        '''Validated a form for the right input'''
+        form.instance.creator = self.request.user
+        return super().form_valid(form)
+
+
+class GigUpdateView(UpdateView):
+    model = Gig
+    fields = {'title', 'price', 'image', 'delivery', 'added_files', \
+              'quality', 'colors_included', 'mockups_included', \
+              'description',}
+    template_name = "gigs/update.html"
+

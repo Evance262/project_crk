@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'gigs.apps.GigsConfig',
     'pages.apps.PagesConfig',
     'easy_thumbnails',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -145,6 +146,9 @@ STATICFILES_FINDERS = [
 "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
+# CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -169,7 +173,7 @@ SOCIAL_AUTH_FACEBOOK_KEY = '747533266241783' # Facebook App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = '1063e63f597b3e65d328801b5cfa4112' # Facebook App Secret
 
 # Success login redirection
-LOGIN_REDIRECT_URL = 'logout'
+LOGIN_REDIRECT_URL = '/gigs/home'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 

@@ -46,7 +46,7 @@ def user_login(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return redirect('dashboard')
+                    return redirect('home')
                 else:
                     messages.error(request, 'Disabled account')
             else:
@@ -61,7 +61,7 @@ def logoutUser(request):
     Redirects to a success page
     """
     logout(request)
-    return render('login')
+    return render('account:login')
 
 
 def register(request):

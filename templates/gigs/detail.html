@@ -18,6 +18,15 @@
     <section class="my-4">
       <div class="container">
         <h3>{{ gig.title }}</h3>
+        <p>
+          Created by:
+          <a href="#"> 
+            {{ gig.creator.username }}
+          </a>
+        </p>
+       {% if gig.creator.name %}
+         <p>{{ gig.creator.name }}</p>
+       {% endif %}
       </div>
     </section>
 

@@ -1,14 +1,15 @@
-from django.db import models
 from django.conf import settings
+from django.db import models
 from django.utils.text import slugify
+from autoslug import AutoSlugField
 from django.urls import reverse
 
 
 class Gig(models.Model):
     '''model that will be used to store
        gigs retrieved from different sites.'''
-    user = models.ForeignKey(settings.AUTH_USER_MODEL,
-                             related_name='gigs_created',
+    creator = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             null=True,
                              on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     price = models.PositiveIntegerField(default=5000,
@@ -20,8 +21,10 @@ class Gig(models.Model):
     colors_included = models.BooleanField(verbose_name="Different colors",
                                           help_text="will you include different colors")
     mockups_included = models.BooleanField()
-    slug = models.SlugField(max_length=200,
-                            blank=True)
+    slug = AutoSlugField("Gig address",
+                            unique=True,
+                            always_update=False,
+                            populate_from="title")
     image = models.ImageField(upload_to='images/%Y/%m/%d/')
     description = models.TextField(blank=True)
     created = models.DateField(auto_now_add=True,
@@ -47,4 +50,4 @@ class Gig(models.Model):
     
 
     def get_absolute_url(self):
-        return reverse('gigs:detail', args=[self.id, self.slug])
+        return reverse('gigs:gig-detail', kwargs={"slug", self.slug})

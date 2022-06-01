@@ -45,37 +45,18 @@
                     <div style="flex:1"><strong>Created</strong></div>
                 </div>
 
-                    {% for gig in user.gigs %}
-                      <div class="gig-row">
-                    <div style="flex:2"><img src="{% static 'images/black-mug.jpg' %}" class="row-image"></div>
-                    <div class="p-4" style="flex:2"><a class="nav-link text-success" href="#">Mug Design</a></div>
-                    <div class="p-4" style="flex:1">{{ gig.price }}</div>
-                    <div class="p-4" style="flex:1">Print on demand</div>
-                    <div class="p-4" style="flex:1">4</div>
-                    <div class="p-4" style="flex:1">28-05-2022</div>
-                  </div>
+                {% for gig in all_gigs_by_user %}
+                    <div class="gig-row">
+                        <div style="flex:2"><img src="{% static 'images/black-mug.jpg' %}" class="row-image"></div>
+                        <div class="p-4" style="flex:2"><a class="nav-link text-success" \
+                            href="{% url 'gigs:gig-detail' gig.slug %}">{{ gig.title }}</a></div>
+                        <div class="p-4" style="flex:1">{{ gig.price }}</div>
+                        <div class="p-4" style="flex:1">Print on demand</div>
+                        <div class="p-4" style="flex:1">4</div>
+                        <div class="p-4" style="flex:1">28-05-2022</div>
+                    </div>
                     {% endfor %}
-                  
 
-                  <div class="gig-row">
-                    <div style="flex:2"><img src="{% static 'images/tshirt.jpg' %}" class="row-image"></div>
-                    <div class="p-4" style="flex:2"><a class="nav-link text-success" href="#">Custom T-shirt design</a></div>
-                    <div class="p-4" style="flex:1">MK 6800</div>
-                    <div class="p-4" style="flex:1">T-shirt Design</div>
-                    <div class="p-4" style="flex:1">4</div>
-                    <div class="p-4" style="flex:1">10-05-2022</div>
-                  </div>
-
-                  <div class="gig-row">
-                    <div style="flex:2"><img src="{% static 'images/Packaging-Design.jpg' %}" class="row-image"></div>
-                    <div class="p-4" style="flex:2"><a class="nav-link text-success" href="#">Product and Packaging</a></div>
-                    <div class="p-4" style="flex:1">MK 10,500</div>
-                    <div class="p-4" style="flex:1">Product and packaging</div>
-                    <div class="p-4" style="flex:1">4</div>
-                    <div class="p-4" style="flex:1">01-12-2021</div>
-                  </div>
-
-                
             </div>
         </div>
     </div>
