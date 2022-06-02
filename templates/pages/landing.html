@@ -1,10 +1,10 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 {% load static %}
 
 {% block content %}
 
     <!-- showcase -->
-    <section class="bg-light text-dark p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+    <section id="welcome" class="bg-light text-dark p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
       <div class="container">
         <div class="d-sm-flex align-item-center justify-content-between">
           <div>
@@ -31,8 +31,8 @@
     </section>
 
     <!-- Cards -->
-    <section class="p-4">
-      <div class="container">
+    <section id="trending" class="p-4">
+      <div  class="container">
         <div class="p-2 my-3">
           <h4 class="title">Trending</h4>
         </div>
@@ -110,13 +110,44 @@
       <div class="container">
         <div class="d-sm-flex justify-content-between align-items-center">
           <div class="col-md">
-            <h3>It's easy to get hired!</h3>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat et sunt deleniti quibusdam
-            beatae dolores natus qui dolore excepturi aperiam"</p>
+            <h3>Testimonials</h3>
+            <br>
+          <p>I want to use the website to start my T-shirt business, so that I can easily contact different designers."</p>
           </div>
-          <div class="col-md">
-            <img src="{% static 'images/male_avatar.svg' %}" width="20%" class="rounded  d-none d-sm-block" alt="avatar">
+          <div class="col-md align-content-center">
+            <img src="{% static 'images/female_avatar.svg' %}" width="20%" class="rounded  d-none d-sm-block" alt="avatar">
+            <p>Tabitha - Designer</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="bg-dark text-light p-4">
+      <div class="container">
+        <h2 class="text-center">About Crk Space</h2>
+          <br>
+        <div class="d-sm-flex justify-content-between align-items-center">
+
+            <div class="col-md">
+              <h4>What is it?</h4>
+              <br>
+            <p>Crk Space (Creek Space) is a platform for Freelancers, who run their businesses <br>
+              like Graphic Designing, Web Development, Photography, etc. Designers, 
+              Web Developers or Photographers can create a profile for their business and 
+              start <br> creating gigs, deliver the work to the clients and get paid. </p>
+          </div>
+          
+            <div class="col-md">
+              <h4>Goal</h4>
+              <br>
+            <p>The project’s goal is to help business owners in Malawi to hire graphic designers, <br>
+              developers or photographers who are verified to provide reliable and quality <br> services.
+              In addition to that it will enable designers to freelance and get hired from different employers.
+              Furthermore, the print-on-demand service will enable designers to <br> deliver merchandise to clients
+              through suppliers identified by the site without inventory.</p>
+          </div>
+          
         </div>
       </div>
     </section>
