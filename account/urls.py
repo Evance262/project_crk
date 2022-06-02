@@ -12,8 +12,9 @@ urlpatterns = [
     # POST views
     path('login/', views.user_login, name='login'),
     path('login/', auth_views.LoginView.as_view(), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('logout/', views.logoutUser, name='logout'),
     path('dashboard', views.dashboard, name='dashboard'),
+    path("<str:username>/", views.UserDetailView.as_view(), name="user-detail"),
     
     # change password urls
     path('password_change/',

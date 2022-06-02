@@ -30,6 +30,16 @@ from django.views.generic import (
 User = get_user_model()
 
 
+class UserDetailView(DetailView):
+    model = User
+    template_name = "account/user_detail.html"
+    # These Next Two Lines Tell the View to Index
+    #   Lookups by Username
+    slug_field = "username"
+    slug_url_kwarg = "username"
+
+
+
 # Instantiating a new login form from GET method
 def user_login(request):
     '''
@@ -61,7 +71,7 @@ def logoutUser(request):
     Redirects to a success page
     """
     logout(request)
-    return render('account:login')
+    return redirect('pages:landing')
 
 
 def register(request):

@@ -44,6 +44,12 @@ class User(AbstractUser):
         return True
 
 
+    def get_absolute_url(self):
+        return reverse(
+            "account.user-detail:detail", kwargs={"username": self.username}
+        )
+
+
 class Identity(models.Model):
     user = models.ForeignKey(User, null=True, default="", blank=True, on_delete=models.CASCADE)
     nationality = models.CharField(max_length=550)
