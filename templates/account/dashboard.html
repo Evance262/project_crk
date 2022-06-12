@@ -13,7 +13,7 @@
         <div class="col-lg-12 p-4">
             <div class="box-element p-4"">
                 <a class="btn btn-outline-dark" href="{% url 'edit' %}">Edit profile</a>
-                <a class="btn btn-outline-danger" href="{% url 'password_change' %}">Change password</a>
+                <a class="btn btn-outline-danger" href="{% url 'account:password_change' %}">Change password</a>
                 <h4 class="p-4"" style="display: inline-block;float: right"> Hello {{ user.username }}</h4>
                 <h4 class="p-4"" style="display: inline-block;float: right">{{ user.image }}</h4>
                 <br>
@@ -28,8 +28,8 @@
 
                 <table class="table">
                     <tr>
-                        <th><h5>Number of Gigs: <strong>3</strong></h5></th>
-                        <th><h5>Earning: <strong>#</strong></h5></th>
+                        <th><h5>Number of Gigs: <strong></strong></h5></th>
+                        <th><h5>Earning: <strong></strong></h5></th>
                         <th>
                             <a style="float:right; margin:5px" class="btn btn-success" href="{% url 'gigs:gig-create' %}">Create a Gig</a>
                         </th>
